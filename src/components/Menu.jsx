@@ -55,13 +55,15 @@ const Menu = () => {
 	setCurrentIndex(newIndex);
  }
 
- const getCocktailAt = (indexOffset) => {
-	return sliderLists[(currentIndex + indexOffset + totalCocktails) % totalCocktails]
+ const getCocktailAt = (moveBy) => {
+	return sliderLists[(currentIndex + moveBy + totalCocktails) % totalCocktails]
  }
 
  const currentCocktail = getCocktailAt(0);
  const prevCocktail = getCocktailAt(-1);
  const nextCocktail = getCocktailAt(1);
+
+ console.log(currentCocktail);
 
  return (
 	<section id="menu" aria-labelledby="menu-heading">
